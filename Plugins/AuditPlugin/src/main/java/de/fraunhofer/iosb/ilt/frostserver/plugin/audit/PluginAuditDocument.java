@@ -31,8 +31,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * (may be) useful for Audit
+ * MAYBE useful for Audit
  * - access to request and maybe content (was not tested yet)
+ * - missing access to Header (and therefore the user)!
  */
 public class PluginAuditDocument implements PluginRootDocument, ConfigDefaults {
 
@@ -50,6 +51,16 @@ public class PluginAuditDocument implements PluginRootDocument, ConfigDefaults {
 
     /**
      * Add Audit code here
+     *
+     * ServiceRequest has access to:
+     * - requestType
+     * - content
+     * - contentType
+     * - parameterMap
+     * - urlPath
+     * - urlQuery
+     *
+     * (@see #Service.executeGetCapabilities())
      */
     @Override // from PluginRootDocument
     public void modifyServiceDocument(ServiceRequest request, Map<String, Object> result) {
