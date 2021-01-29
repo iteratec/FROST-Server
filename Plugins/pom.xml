@@ -14,5 +14,7 @@
         <module>FormatDataArray</module>
         <module>FormatGeoJson</module>
         <module>OpenApi</module>
+        
+        <module>AuditPlugin</module>
     </modules>
 </project>
